@@ -1,0 +1,217 @@
+/* .s = Set */
+
+.s-container{
+	padding: 0 15px;
+	margin: 0 auto;
+	@media (min-width: $v-sm) {
+		width: $container-sm;
+	}
+
+	@media (min-width: $v-md) {
+		width: $container-md;
+	}
+
+	@media (min-width: $v-lg) {
+		width: $container-lg;
+	}
+
+	&:before,
+	&:after{
+		display: table;
+		content: "";
+		clear: both;
+	}
+}
+// for grid styling
+@mixin col-grid($min, $max){
+	@for $i from $min to $max+1{
+		.col-#{$i}{
+			width: percentage($i/$max);
+			float: left;
+			position: relative;
+			min-height: 1px;
+			padding: 0 15px;
+		}
+
+		.col-offset-#{$i}{
+			margin-left: percentage($i/$max);
+		}
+	}
+}
+
+.row{
+	padding: 0 -15px;
+	&:before,
+	&:after{
+		content:"";
+    display: table ;
+	}
+
+	&:after{
+		clear:both;
+	}
+}
+
+@include col-grid(1, 12);
+
+// for width styling
+
+@mixin width ($mix, $max){
+	@for $i from $min to $max+1{
+		.s-w-#{$i}{
+			width: #{$i}% !important;
+		}
+	}
+}
+
+// for margin Styling
+@mixin margin-padding($min, $max){
+	@for $i from $min to $max+1{
+		.s-m-#{$i} {
+			margin:#{$i}px !important;
+		}
+
+		.s-mt-#{$i} {
+			margin-top:#{$i}px!important;
+		}
+
+		.s-mb-#{$i}{
+			margin-bottom:#{$i}px!important;
+		}
+
+		.s-mr-#{$i}{
+			margin-right:#{$i}px!important;
+		}
+
+		.s-ml-#{$i}{
+			margin-left:#{$i}px!important;
+		}
+
+		.s-my-#{$i}{
+			margin-top:#{$i}px!important;
+			margin-bottom:#{$i}px!important;
+		}
+
+		.s-mx-#{$i}{
+			margin-left:#{$i}px!important;
+			margin-right:#{$i}px!important;
+		}
+
+		.s-p-#{$i}{
+			padding:#{$i}px!important;
+		}
+
+		.s-pt-#{$i}{
+			padding-top:#{$i}px!important;
+		}
+
+		.s-pb-#{$i}{
+			padding-bottom:#{$i}px!important;
+		}
+
+		.s-pr-#{$i}{
+			padding-right:#{$i}px!important;
+		}
+
+		.s-pl-#{$i}{
+			padding-left:#{$i}px!important;
+		}
+
+		.s-py-#{$i}{
+			padding-top:#{$i}px!important;
+			padding-bottom:#{$i}px!important;
+		}
+
+		.s-px-#{$i}{
+			padding-right:#{$i}px!important;
+			padding-left:#{$i}px!important;
+		}
+	}
+
+	.m-0-a{
+		margin:0 auto;
+	}
+}
+
+@include margin-padding(0, 100);
+
+// mixins for text align[.s-ta-(text-align-code)]
+$a-code : l, c, r, j;
+$align-value : left, center, right, justify;
+@for $a from 1 through length($a-code) {
+  .s-ta-#{nth($a-code, $a)} {
+    text-align: #{nth($align-value, $a)};
+  }
+}
+
+// Text Decoration [.u-ft-($d-code)]
+$d-code : underline, overline, line-through, none;
+@for $d from 1 through length($d-code) {
+  .s-td-#{nth($d-code, $d)} {
+    text-decoration: #{nth($d-code, $d)};
+    &.u-hover-#{nth($d-code, $d)} {
+      &:hover{
+        text-decoration: #{nth($d-code, $d)};
+      } 
+    }
+  }
+}
+
+// font-size percent
+
+@mixin font-sizes($min, $max){
+	@for $i from $min to $max+1{
+		.s-fs-#{$i}{
+			font-size: #{$i}% !important;
+		}
+	}
+}
+
+@include font-sizes(0, 100);
+
+// Text Color [s-tc-r]
+$c-code : black, grey, red, blue, disabled;
+$c-value : $v-black, $v-grey, $v-red, $v-blue, $v-grey;
+@for $c from 1 through length($c-code) {
+  .s-tc-#{nth($c-code, $c)} {
+    color: #{nth($c-code, $c)};
+  }
+}
+
+// Font Weight [.s-ft-($w-code)]
+$fw-code: l, r, m, b;
+$fw-value: 300, 400, 500, 700;
+@for $w from 1 through length($fw-code) {
+  .s-ft-#{nth($fw-code, $w)} {
+    font-weight: #{nth($fw-value, $w)}
+  }
+}
+
+// Display [.s-d-($d-code)]
+$d-code : b, i, ib, f, if, t, tc, n;
+$display-value : block, inline, inline-block, flex, inline-flex, table, table-cell, none;
+@for $d from 1 through length($d-code) {
+  .s-d-#{nth($d-code, $d)} {
+    display: #{nth($display-value, $d)} !important;
+  }
+}
+
+.s-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.s-float-l{
+	float: left!important;
+}
+
+.s-float-r{
+	float: right!important;
+}
+
+.s-pos-r {
+	position: relative !important;
+}

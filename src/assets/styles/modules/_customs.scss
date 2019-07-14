@@ -1,0 +1,290 @@
+html,body{
+	margin: 0;
+	background: $v-h5-gray ;
+}
+
+*,
+*:before,
+*:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+//placeholder
+input::placeholder{
+	color: $v-grey;
+	letter-spacing: 0;
+}
+
+hr{
+	&.card-divider{
+		margin: 15px 0;
+		border: $border-dots;
+		border-width: 0.5px;
+	}
+}
+
+.card-frame{
+	border-radius: 5px;
+	background: $v-white;
+	border: 1px solid $v-light-border;
+	padding: 10px 15px;
+	box-shadow: 4px 4px 7px 4px rgba(216, 216, 216, 0.1);
+}
+
+
+
+.custom-radio{
+	display: inline-block;
+	position: absolute;
+	border: $border-grey;
+	border-radius: 100%;
+	height: 20px;
+	width: 20px;
+	transform: translateY(-100%);
+	z-index: 5;
+	transition: border .10s linear;
+	-webkit-transition: border .10s linear;
+	margin: 5px 10px;
+
+	&:before{
+		display: block;
+		position: absolute;
+		content: '';
+		border-radius: 100%;
+		height: 10px;
+		width: 10px;
+		top: 4px;
+		left: 4px;
+		margin: auto;
+		transition: background 0.10s linear;
+		-webkit-transition: background 0.10s linear;
+	}
+}
+
+.count-down-standard{
+	transition: 0.25s;
+	transition-timing-function: ease-out;
+	transform: translateY(0);
+	opacity: 1;
+
+	&.unpinned{
+		transform: translateY(-100%);
+		transition-timing-function: ease-in;
+		transition: 0.2s;
+	}
+
+	label{
+		color: $v-white;
+		display: block;
+		font-size: 80%;
+	}
+
+	.countdown-frame{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: $v-red-header;
+		margin: 10px 0;
+		padding: 10px 0;
+		color: $v-white;
+		border: 1px solid $v-red-border;
+		box-shadow: 2px 2px 2px 0 rgba(232, 232, 232, 0.1);
+
+		.block {
+			display: flex;
+			flex-direction: column;
+			margin: 0 10%;
+
+			.digit{
+				text-align:center;
+				font-size: 1.6rem;
+			}
+			.text{
+				font-size: 0.7rem;
+			}
+
+			p{
+				margin: 0;
+			}
+		}
+
+		.divid{
+			font-size: 2rem;
+			color: $v-black;
+		}
+	}
+}
+
+.count-down-fixed{
+	color: $v-white;
+	font-size: 80%;
+	background: $v-red;
+	padding: 7px 15px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	z-index: 9;
+	//animation
+	transform: translateY(-100%);
+	transition-timing-function: ease-in;
+	transition: 0.2s;
+
+	&.is-show{
+		transition: 0.25s;
+		transition-timing-function: ease-out;
+		
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	.countdown-mini-frame{
+		margin: 0 15px;
+	}
+
+	.countdown-mini-icon{
+		img{
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+			max-width: 1rem;
+		}
+	}
+}
+
+// promo flag
+
+.promo-flag-first {
+	position: relative;
+	border: 1px solid $v-red;
+	background: $v-white;
+	color: $v-red;
+	text-align: center;
+	display: inline-block;
+	padding: .2rem .4rem;
+	border-radius: 4px;
+
+	p{
+		font-size: 50% !important;
+		margin: 0;
+		text-transform: uppercase;
+
+		&.tiny{
+			font-size: 50%;
+		}
+	}
+
+	&:before,
+	&:after{
+		height:45px;
+		width:23px;
+		content: '';
+		position: absolute;
+		top: calc(0.4rem - 0.5px);
+		height: .4rem;
+		width: .3rem;
+		border: 1px solid $v-red;
+	}
+
+	&:before {
+		left: -1px;
+		border-radius: 0 1rem 1rem 0;
+		border-left-color: $v-white;
+	}
+
+	&:after {
+		right: -1px;
+		border-radius: 1rem 0 0 1rem;
+		border-right-color: $v-white;
+	}
+}
+
+// mini icon
+.small{
+	.logo-payment-frame{
+		width: 3.5rem;
+
+		img{
+			max-height: 2.5rem !important;
+		}
+	}
+
+	.custom-radio{
+		margin: 10px;
+	}
+}
+
+.logo-payment-frame{
+	width: 2.5rem;
+	height: auto;
+	max-height: 2rem;
+	margin: 0 5px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+
+	&:first-of-type{
+		margin-left: 0;
+	}
+
+	img{
+		width: 100%;
+    height: auto;
+    max-width: 3.5rem;
+    max-height: 1.5rem;
+    float: left;
+    border: $border-normal;
+    border-radius: 5px;
+    padding: 2px;
+	}
+}
+
+// arrow custom icon
+i {
+	&.arrow{
+		border: solid $v-black;
+		border-width: 0 1.5px 1.5px 0;
+		display: inline-block;
+		padding: 6px;
+	}
+}
+
+.right {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+.left {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+.up {
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+// dots
+.custom-dots{
+	height: 7px;
+  width: 7px;
+  background-color: $v-black;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 1px;
+  vertical-align: middle;
+}
