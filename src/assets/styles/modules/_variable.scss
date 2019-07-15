@@ -4,11 +4,13 @@ $v-red-header: #CB2E36;
 $v-red-border: #CC3C45;
 $v-light-border: #F4F4F4;
 $v-h5-gray : #F7F7F7;
+$v-background: #010314;
+$v-second-line: #3DAEB1;
 
 // Breakpoints
 $v-sm   : 767px;
 $v-md   : 992px;
-$v-lg   : 1300px;
+$v-lg   : 1440px;
 
 // container size
 $container-sm: 750px;
@@ -34,3 +36,20 @@ $border-red: 1px solid $v-red;
 $border-grey: 1px solid $v-grey;
 $border-disabled: 1px solid rgba($v-border-input, 0.5);
 $border-dots: 1px dashed $v-dots;
+
+@keyframes logo {
+	9% {
+    transform: translateX(-50%) translateY(-50%) scale(2);
+    opacity: 0; 
+  }
+  9.1% {
+  	opacity: 1;
+  }
+	14% { 
+    opacity: 1; 
+  }
+	18% { 
+    transform: translateX(-50%) translateY(-50%) scale(0.1);
+    opacity: 1;
+  }	
+}
