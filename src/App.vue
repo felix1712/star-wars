@@ -8,5 +8,6 @@
 	@import "@/assets/styles/main.scss";
 	#app{
 		height: 100%;
+		background: #010314;
 	}
 </style>
