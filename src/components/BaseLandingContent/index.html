@@ -1,0 +1,20 @@
+<div class="base-landing-content">
+	<div class="header-section">
+		<h5 class="header-content">{{headerTitle}}</h5>
+		<div class="line-header"></div>
+	</div>
+	<i class="arrow left" @click="slideClick('left')"></i>
+	<i class="arrow right" @click="slideClick('right')"></i>
+	<div class="slider-landing">
+		<template v-for="item in contentData">
+			<div class="card-frame col-3 slider-landing-content">
+				<div class="image-content">
+					<img :src="imageUrl(item.name)" @error="$root.imageError">
+				</div>
+				<div class="title-content">
+					<h5>{{item.name}}</h5>
+				</div>
+			</div>
+		</template>			
+	</div>
+</div>
