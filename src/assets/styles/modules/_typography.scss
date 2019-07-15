@@ -1,10 +1,10 @@
-$font-family: "Lato";
-$font-type: Light, Regular, Bold;
-$font-weight: 300, 400, 700;
+$font-family: "Avenir";
+$font-type: Demi;
+$font-weight: 400;
 $font-path: '~@/assets/fonts/';
 
 @for $i from 1 through length($font-type) {
-  $src: #{$font-path + "Lato/Lato-"}#{nth($font-type, $i)};
+  $src: #{$font-path + "Avenir/Avenir-"}#{nth($font-type, $i)};
   @font-face {
     font-family : $font-family;
     src         : url('#{$src}.ttf');
@@ -14,16 +14,16 @@ $font-path: '~@/assets/fonts/';
   }
 }
 
-$font-family-2: "SF-Pro";
+$font-family-2: "QuickSand";
 $font-type-2: Light, Regular, Medium, Bold;
 $font-weight-2: 300, 400, 500, 700;
 
 @for $i from 1 through length($font-type-2) {
-  $src: #{$font-path + "SF-Pro/SF-Pro-Display-"}#{nth($font-type-2, $i)};
+  $src: #{$font-path + "Quicksand/Quicksand-"}#{nth($font-type-2, $i)};
   @font-face {
     font-family : $font-family-2;
-    src         : url('#{$src}.otf');
-    src         : url('#{$src}.otf') format('truetype');
+    src         : url('#{$src}.ttf');
+    src         : url('#{$src}.ttf') format('truetype');
     font-style  : normal;
     font-weight : nth($font-weight-2, $i);
   }
@@ -38,6 +38,10 @@ html, body{
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
   font-size: 1rem;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: $font-family;
 }
 
 a{
