@@ -18,9 +18,11 @@
 				</div>
 				<div class="col-9 s-px-5">
 					<template v-for="item in listData">
-						<BaseCard 
-							:cardData="item"
-						/>
+						<router-link :to="{name: 'Detail', params: {detailData: item, type: paramsList}}">
+							<BaseCard
+								:cardData="item"
+							/>
+						</router-link>
 					</template>
 					<div class="col-12 load-more-frame" v-if="nextUrl">
 						<a class="load-more-list" @click="loadMore">Load More</a>
@@ -47,7 +49,7 @@
 			}
 		},
 		mounted() {
-			this.paramsList = this.$route.params.listType.toLowerCase() || '';
+			this.paramsList = this.$route.params.listType ? this.$route.params.listType.toLowerCase() : 'people';
 			if(this.paramsList === 'character'){
 				this.paramsList = 'people'
 			};
