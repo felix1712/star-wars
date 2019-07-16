@@ -8,6 +8,17 @@ html,body{
     background: transparent;
 }
 
+.clearfix {
+  &:before,
+  &:after {
+    display: table; // 2
+    content: " "; // 1
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 *,
 *:before,
 *:after{
@@ -43,11 +54,6 @@ hr{
 	border: 1px solid $v-light-border;
 	padding: 10px 15px;
 	box-shadow: 4px 4px 7px 4px rgba(216, 216, 216, 0.1);
-
-	&.slider-landing-content{
-		background: transparent;
-		border: 3px solid $v-second-line;
-	}
 }
 
 // arrow custom icon
@@ -86,4 +92,68 @@ i {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;	
+}
+
+//filter 
+
+.panel-filter-head{
+  border-bottom: solid 3px $v-second-line;
+  line-height: 24px;
+
+  h4{
+  	line-height: 22px;
+  	letter-spacing: -0.5px;
+    color: $v-white;
+    margin: 10px 0;
+    font-size: 1.5rem;
+  }
+}
+
+
+.panel-filter-group {
+  border-radius: 4px;
+  margin-top: 15px;
+
+  .stand-list-group {
+    margin-bottom: 0;
+	}
+
+	.list-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+
+    .list-group-item{
+    	color: $v-white;
+	    background-color: transparent;
+	    padding: 8px 0;
+	    transition: all 0.3s ease;
+	    border-radius: 4px;
+	    margin: 3px 0;
+	    font-weight: 600;
+	    font-size: 1.2rem;
+	    text-transform: capitalize;
+
+	    &:hover{
+	    	color: $v-second-line;
+	    }
+
+	    &.active{
+	    	color: $v-second-line;	
+	    }
+    }
+	}
+
+	.panel-search-input{
+		width: 100%;
+    margin-bottom: 20px;
+    padding: 15px 10px;
+    border-radius: 4px;
+    border: 2px solid $v-white;
+    color: $v-white;
+    background: transparent;
+
+    &:focus{
+    	border: 2px solid $v-second-line;
+    }
+	}
 }
