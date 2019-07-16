@@ -11,7 +11,11 @@
 				</div>
 				<DetailPeople 
 					:peopleData="detailData"
-					v-if="detailData"
+					v-if="detailData && $route.params.type === 'people'"
+				/>
+				<DetailPlanet 
+					:planetData="detailData"
+					v-if="detailData && $route.params.type === 'planets'"
 				/>
 				<!-- <DetailPeople />
 				<DetailFilm />
@@ -24,6 +28,7 @@
 
 <script>
 	import DetailPeople from '@/components/DetailPeople/DetailPeople.vue';
+	import DetailPlanet from '@/components/DetailPlanet/DetailPlanet.vue';
 
 	export default{
 		name: 'Details',
@@ -54,6 +59,7 @@
 		},
 		components: {
 			DetailPeople,
+			DetailPlanet
 		},
 	}
 </script>
