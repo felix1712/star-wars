@@ -41,8 +41,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 import BaseLandingContent from '@/components/BaseLandingContent/BaseLandingContent.vue';
 
 export default {
@@ -55,7 +53,6 @@ export default {
   	}
   },
   components: {
-    HelloWorld,
     BaseLandingContent,
   },
   async mounted() {
@@ -127,7 +124,7 @@ export default {
 			    height: 2px;
 			    float: left;
 				}
-				.point {    
+				.point {  
 					width: 0;
 			    height: 0;
 			    border-top: 5px solid transparent;
