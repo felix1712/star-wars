@@ -21,9 +21,16 @@
 					:starshipData="detailData"
 					v-if="detailData && $route.params.type === 'starships'"
 				/>
+				<DetailFilm 
+					:filmData="detailData"
+					v-if="detailData && $route.params.type === 'films'"
+				/>
+				<DetailSpecies 
+					:speciesData="detailData"
+					v-if="detailData && $route.params.type === 'species'"
+				/>
+
 				<!-- <DetailPeople />
-				<DetailFilm />
-				<DetailStarShips />
 				<DetailVehicles /> -->
 			</div>
 		</div>
@@ -34,6 +41,8 @@
 	import DetailPeople from '@/components/DetailPeople/DetailPeople.vue';
 	import DetailPlanet from '@/components/DetailPlanet/DetailPlanet.vue';
 	import DetailStarship from '@/components/DetailStarship/DetailStarship.vue';
+	import DetailFilm from '@/components/DetailFilm/DetailFilm.vue';
+	import DetailSpecies from '@/components/DetailSpecies/DetailSpecies.vue';
 
 	export default{
 		name: 'Details',
@@ -65,7 +74,9 @@
 		components: {
 			DetailPeople,
 			DetailPlanet,
-			DetailStarship
+			DetailStarship,
+			DetailFilm,
+			DetailSpecies
 		},
 	}
 </script>
@@ -88,6 +99,7 @@
 				color: $v-white;
 				font-size: 1.3rem;
 				margin: 0;
+				text-transform: capitalize;
 			}
 			h3{
 				margin: 3rem 0;

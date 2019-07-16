@@ -1,0 +1,70 @@
+<div class="detail-people">
+	<div class="row">
+		<div class="col-6">
+			<p>average height</p>
+			<h5>{{speciesData.average_height}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>average lifespan</p>
+			<h5>{{speciesData.average_lifespan}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>classification</p>
+			<h5>{{speciesData.classification}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>designation</p>
+			<h5>{{speciesData.designation}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Hair Color</p>
+			<h5>{{speciesData.hair_colors}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Eye Colors</p>
+			<h5>{{speciesData.eye_colors}}</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Skin Color</p>
+			<h5>{{speciesData.skin_colors}}</h5>
+		</div>
+		<div class="col-6">
+			<p>language</p>
+			<h5>{{speciesData.homeworld}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<p>skin colors</p>
+			<h5>{{speciesData.skin_colors}}</h5>
+		</div>	
+		<div class="col-6"></div>	
+	</div>
+	<div class="row" v-if="people.length">
+		<div class="col-12">
+			<p>people</p>
+			<template v-for="item in people">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+
+	<div class="row" v-if="films.length">
+		<div class="col-12">
+			<p>Films</p>
+			<template v-for="item in films">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+</div>
