@@ -1,0 +1,71 @@
+<div class="detail-people">
+	<div class="row">
+		<div class="col-6">
+			<p>director</p>
+			<h5>{{filmData.director}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>producer</p>
+			<h5>{{filmData.producer}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>release date</p>
+			<h5>{{filmData.release_date}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>episode id</p>
+			<h5>{{filmData.episode_id}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<p>opening crawl</p>
+			<h5>{{filmData.opening_crawl}}</h5>
+		</div>	
+	</div>
+	<div class="row" v-if="species.length">
+		<div class="col-12">
+			<p>Species</p>
+			<template v-for="item in species">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+		<div class="col-6"></div>	
+	</div>
+	<div class="row" v-if="starships.length">
+		<div class="col-12">
+			<p>Starships</p>
+			<template v-for="item in starships">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+
+	<div class="row" v-if="vehicles.length">
+		<div class="col-12">
+			<p>Vehicles</p>
+			<template v-for="item in vehicles">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+
+	<div class="row" v-if="planets.length">
+		<div class="col-12">
+			<p>Planets</p>
+			<template v-for="item in planets">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+</div>
