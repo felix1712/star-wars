@@ -1,0 +1,62 @@
+<div class="detail-planet">
+	<div class="row">
+		<div class="col-6">
+			<p>Diameter</p>
+			<h5>{{planetData.diameter}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Gravity</p>
+			<h5>{{planetData.gravity}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Orbital Period</p>
+			<h5>{{planetData.orbital_period}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Rotation Period</p>
+			<h5>{{planetData.rotation_period}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Surface Water</p>
+			<h5>{{planetData.surface_water}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Population</p>
+			<h5>{{planetData.population}}</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Terrain</p>
+			<h5>{{planetData.terrain}}</h5>
+		</div>
+		<div class="col-6">
+			<p>Climate</p>
+			<h5>{{planetData.climate}}</h5>
+		</div>	
+	</div>
+	<div class="row" v-if="films.length">
+		<div class="col-12">
+			<p>Films</p>
+			<template v-for="item in films">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+	<div class="row" v-if="people.length">
+		<div class="col-12">
+			<p>Residents</p>
+			<template v-for="item in people">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+</div>
