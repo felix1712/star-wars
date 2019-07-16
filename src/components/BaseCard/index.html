@@ -4,7 +4,8 @@
 			<img :src="imageUrl(cardData.name)" @error="$root.imageError">
 		</div>
 		<div class="title-content">
-			<h5>{{cardData.name}}</h5>
+			<h5 v-if="cardData.name">{{cardData.name}}</h5>
+			<h5 v-if="cardData.title">{{cardData.title}}</h5>
 		</div>
 	</div>
 </div>
