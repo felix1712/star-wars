@@ -1,0 +1,83 @@
+<div class="detail-people">
+	<div class="row">
+		<div class="col-6">
+			<p>Date of Birth</p>
+			<h5>{{peopleData.birth_year}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Gender</p>
+			<h5>{{peopleData.gender}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Height</p>
+			<h5>{{peopleData.height}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Weight</p>
+			<h5>{{peopleData.mass}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Hair Color</p>
+			<h5>{{peopleData.hair_color}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Eye Color</p>
+			<h5>{{peopleData.eye_color}}</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Skin Color</p>
+			<h5>{{peopleData.skin_color}}</h5>
+		</div>
+		<div class="col-6">
+			<p>Homeworld</p>
+			<h5>{{homeWorld.name}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Species</p>
+			<template v-for="item in species">
+				<h5>{{item.name}}</h5>
+			</template>
+		</div>	
+		<div class="col-6"></div>	
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<p>Starships</p>
+			<template v-for="item in starships">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<p>Vehicles</p>
+			<template v-for="item in vehicles">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<p>Films</p>
+			<template v-for="item in films">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+</div>
