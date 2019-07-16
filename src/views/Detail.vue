@@ -2,7 +2,7 @@
 	<div class="page-detail">
 		<div class="row s-container">
 			<div class="col-6 image-section">
-				<img src="@/assets/images/people/luke.png">
+				<img :src="imageUrl(detailData.name)" @error="$root.imageError">
 			</div>
 			<div class="col-6 info-section">
 				<div class="col-12">
@@ -34,6 +34,23 @@
 		},
 		mounted() {
 			this.detailData = this.$route.params.detailData || '';
+		},
+		methods: {
+			imageUrl(data){
+				if(data){
+					let name = data.toLowerCase();
+					if(name.indexOf(' ') != -1){
+						name = name.substr(0,name.indexOf(' '));
+					}
+					try {
+					   const url = require(`@/assets/images/people/${name}.png`);
+					   return url
+					} catch (ex) {
+					    return this.$root.imageError;
+					}
+				}
+				return this.$root.imageError;
+			}
 		},
 		components: {
 			DetailPeople,
