@@ -47,12 +47,12 @@
 		}
 
 		.title-content{
-			color: #fff;
 			text-align: center;
 			font-size: 2rem;
 			min-height: 75px;
 			h5{
 				margin-bottom: 1.5rem !important;
+				color: #fff !important;
 			}
 		}
 	}
