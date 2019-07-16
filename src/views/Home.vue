@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import BaseLandingContent from '@/components/BaseLandingContent/BaseLandingContent.vue';
 
 export default {
@@ -56,6 +57,7 @@ export default {
     BaseLandingContent,
   },
   async mounted() {
+  	this.actionLoader(true)
   	this.$root.baseService('people', 'get')
     .then((res) => {
     	this.peoples = res.results;
@@ -69,8 +71,16 @@ export default {
     this.$root.baseService('starships', 'get')
     .then((res) => {
     	this.starships = res.results;
+    	this.actionLoader(false);
     })
-  }
+
+    // Promise.all()
+  },
+  methods: {
+  	...mapActions([
+      'actionLoader',
+    ]),
+  },
 };
 </script>
 
@@ -79,6 +89,7 @@ export default {
 	#home{
 		.banner-full{
 			background: #010314;
+			// background: #010314;
 			height: 100vh;
 			position: relative;
 			display: flex;
