@@ -1,8 +1,10 @@
-<div class="card-frame col-3 only-border">
-	<div class="image-content">
-		<img :src="imageUrl(cardData.name)" @error="$root.imageError">
-	</div>
-	<div class="title-content">
-		<h5>{{cardData.name}}</h5>
+<div class="card-frame col-3 s-px-5">
+	<div class="card-border">
+		<div class="image-content">
+			<img :src="imageUrl(cardData.name)" @error="$root.imageError">
+		</div>
+		<div class="title-content">
+			<h5>{{cardData.name}}</h5>
+		</div>
 	</div>
 </div>
