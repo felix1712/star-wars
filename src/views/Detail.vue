@@ -17,6 +17,10 @@
 					:planetData="detailData"
 					v-if="detailData && $route.params.type === 'planets'"
 				/>
+				<DetailStarship 
+					:starshipData="detailData"
+					v-if="detailData && $route.params.type === 'starships'"
+				/>
 				<!-- <DetailPeople />
 				<DetailFilm />
 				<DetailStarShips />
@@ -29,6 +33,7 @@
 <script>
 	import DetailPeople from '@/components/DetailPeople/DetailPeople.vue';
 	import DetailPlanet from '@/components/DetailPlanet/DetailPlanet.vue';
+	import DetailStarship from '@/components/DetailStarship/DetailStarship.vue';
 
 	export default{
 		name: 'Details',
@@ -59,7 +64,8 @@
 		},
 		components: {
 			DetailPeople,
-			DetailPlanet
+			DetailPlanet,
+			DetailStarship
 		},
 	}
 </script>

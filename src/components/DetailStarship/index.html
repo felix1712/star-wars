@@ -1,0 +1,78 @@
+<div class="detail-planet">
+	<div class="row">
+		<div class="col-6">
+			<p>Crew</p>
+			<h5>{{starshipData.crew}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Cargo Capacity</p>
+			<h5>{{starshipData.cargo_capacity}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Consumables</p>
+			<h5>{{starshipData.consumables}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Cost in Credits</p>
+			<h5>{{starshipData.cost_in_credits}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Length</p>
+			<h5>{{starshipData.length}}</h5>
+		</div>	
+		<div class="col-6">
+			<p>Hyperdrive Rating</p>
+			<h5>{{starshipData.hyperdrive_rating}}</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Manufacturer</p>
+			<h5>{{starshipData.manufacturer}}</h5>
+		</div>
+		<div class="col-6">
+			<p>Model</p>
+			<h5>{{starshipData.model}}</h5>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p>Passengers</p>
+			<h5>{{starshipData.passengers}}</h5>
+		</div>
+		<div class="col-6">
+			<p>starship class</p>
+			<h5>{{starshipData.starship_class}}</h5>
+		</div>	
+	</div>	
+	<div class="row">
+		<div class="col-6">
+			<p>MGLT</p>
+			<h5>{{starshipData.MGLT}}</h5>
+		</div>
+	</div>
+	<div class="row" v-if="films.length">
+		<div class="col-12">
+			<p>Films</p>
+			<template v-for="item in films">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+	<div class="row" v-if="pilots.length">
+		<div class="col-12">
+			<p>Residents</p>
+			<template v-for="item in pilots">
+				<BaseCard 
+				 :cardData="item"
+				/>
+			</template>
+		</div>	
+	</div>
+</div>
