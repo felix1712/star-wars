@@ -1,17 +1,11 @@
 <template src="./index.html"></template>
 
 <script>
+	import BaseCard from '@/components/BaseCard/BaseCard.vue';
+
 	export default {
 		name: 'BaseLandingContent',
-		props: {
-			headerTitle: {
-				required: true,
-				default: '',
-			},
-			contentData: {
-				// default: []
-			}
-		},
+		props: ['headerTitle', 'contentData'],
 		methods: {
 			slideClick(data) {
 				let content = document.querySelector(".slider-landing");
@@ -21,19 +15,9 @@
       		content.scrollLeft += 150;
       	}
 			},
-			imageUrl(data){
-				let name = data.toLowerCase();
-				if(name.indexOf(' ') != -1){
-					name = name.substr(0,name.indexOf(' '));
-				}
-				try {
-				   const url = require(`@/assets/images/people/${name}.png`);
-				   return url
-				} catch (ex) {
-				    return this.$root.imageError;
-				}
-				return this.$root.imageError;
-			}
+		},
+		components: {
+			BaseCard,
 		}
 	}
 </script>
@@ -66,26 +50,6 @@
 		  overflow-x: auto;
 		  max-width: 35vw;
 		  margin: 0 auto;
-
-  		.card-frame{
-  			flex: 0 0 auto;
-  			margin: 0 10px;
-  			cursor: pointer;
-
-  			.image-content{
-  				img{
-  					width: 100%;
-				    height: 20vh;
-				    object-fit: contain;
-  				}
-  			}
-
-  			.title-content{
-  				color: #fff;
-  				text-align: center;
-  				font-size: 2rem;
-  			}
-  		}
 		}
 
 		.arrow{
@@ -99,6 +63,14 @@
 			&.right{
 				// margin-right: 2vw;
 				float: right;
+			}
+		}
+
+		.load-more-content{
+			a{
+				font-size: 1.5rem;
+				color: $v-white;
+				margin-right: 2.5rem;
 			}
 		}
 	}
